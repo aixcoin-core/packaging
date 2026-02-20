@@ -1,14 +1,14 @@
 [Desktop Entry]
 Version=1.0
-Name=Bitcoin Core
-Comment=Connect to the Bitcoin P2P Network
-Comment[de]=Verbinde mit dem Bitcoin peer-to-peer Netzwerk
-Comment[fr]=Bitcoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
+Name=Aix Core
+Comment=Connect to the Aix P2P Network
+Comment[de]=Verbinde mit dem Aix peer-to-peer Netzwerk
+Comment[fr]=Aix, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Aix, eşten eşe kriptografik sanal para birimi
 Exec=aix-core.qt %u
 Terminal=false
 Type=Application
 Icon=${SNAP}/share/pixmaps/aix128.png
 MimeType=x-scheme-handler/aix;
 Categories=Office;Finance;P2P;Network;Qt;
-StartupWMClass=Bitcoin-qt
+StartupWMClass=Aix-qt

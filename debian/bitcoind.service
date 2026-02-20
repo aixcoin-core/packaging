@@ -8,7 +8,7 @@
 # /etc/aix/aix.conf
 
 [Unit]
-Description=Bitcoin daemon
+Description=Aix daemon
 After=network.target
 
 [Service]

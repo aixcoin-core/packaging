@@ -1,12 +1,12 @@
-Bitcoin Core packaging
+Aix Core packaging
 =======
 
-Bitcoin Core is packaged and distributed through different channels.
+Aix Core is packaged and distributed through different channels.
 
-Advanced users can compile Bitcoin Core from source. Static binaries for Linux, as well as installers for Windows and macOS are
+Advanced users can compile Aix Core from source. Static binaries for Linux, as well as installers for Windows and macOS are
 provided on the [website](https://aixcore.org/en/download/).
 
-Bitcoin Core is also distributed on several Linux package managers:
+Aix Core is also distributed on several Linux package managers:
 
 * The `aix-core` snap package for https://snapcraft.io/aix-core is maintained in [/snap](/snap)
 * The `org.aixcore.aix-qt` flatpak package is maintained under their organization: https://github.com/flathub/org.aixcore.aix-qt
