@@ -1,23 +1,23 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit bitcoind.service
+# $ systemctl edit aixd.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/bitcoin/bitcoin.conf
+# /etc/aix/aix.conf
 
 [Unit]
 Description=Bitcoin daemon
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/bitcoind -daemon -datadir=/var/lib/bitcoin -conf=/etc/bitcoin/bitcoin.conf -pid=/run/bitcoind/bitcoind.pid
-# Creates /run/bitcoind owned by bitcoin
-RuntimeDirectory=bitcoind
-User=bitcoin
+ExecStart=/usr/bin/aixd -daemon -datadir=/var/lib/aix -conf=/etc/aix/aix.conf -pid=/run/aixd/aixd.pid
+# Creates /run/aixd owned by aix
+RuntimeDirectory=aixd
+User=aix
 Type=forking
-PIDFile=/run/bitcoind/bitcoind.pid
+PIDFile=/run/aixd/aixd.pid
 Restart=on-failure
 
 # Hardening measures

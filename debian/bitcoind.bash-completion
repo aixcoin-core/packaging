@@ -1,2 +1,2 @@
-contrib/bitcoind.bash-completion	bitcoind
-contrib/bitcoin-cli.bash-completion	bitcoin-cli
+contrib/aixd.bash-completion	aixd
+contrib/aix-cli.bash-completion	aix-cli
