@@ -1,4 +1,4 @@
-name: bitcoin-core
+name: aix-core
 version: '30.0'
 summary: Fully validating Bitcoin peer-to-peer network node, wallet and GUI
 description: |
@@ -12,37 +12,37 @@ base: core22
 
 apps:
   daemon:
-    command: bin/bitcoind
+    command: bin/aixd
     plugs: [home, removable-media, network, network-bind]
     environment:
       # Override HOME so the datadir is located at
-      # ~/snap/bitcoin-core/common/.bitcoin/ instead of
-      # ~/snap/bitcoin-core/current/.bitcoin/, and each new version of the
+      # ~/snap/aix-core/common/.aix/ instead of
+      # ~/snap/aix-core/current/.aix/, and each new version of the
       # snap won't have a different data directory:
       # https://docs.snapcraft.io/environment-variables/7983
       HOME: $SNAP_USER_COMMON
   qt:
-    command: bin/desktop-launch bitcoin-qt
+    command: bin/desktop-launch aix-qt
     plugs: [home, removable-media, network, network-bind, desktop, x11, unity7]
     environment:
       HOME: $SNAP_USER_COMMON
       DISABLE_WAYLAND: 1
   cli:
-    command: bin/bitcoin-cli
+    command: bin/aix-cli
     plugs: [home, removable-media, network]
     environment:
       HOME: $SNAP_USER_COMMON
   tx:
-    command: bin/bitcoin-tx
+    command: bin/aix-tx
     environment:
       HOME: $SNAP_USER_COMMON
   wallet:
-    command: bin/bitcoin-wallet
+    command: bin/aix-wallet
     plugs: [home, removable-media]
     environment:
       HOME: $SNAP_USER_COMMON
   util:
-    command: bin/bitcoin-util
+    command: bin/aix-util
     environment:
       HOME: $SNAP_USER_COMMON
 
@@ -65,28 +65,28 @@ parts:
       - xdg-user-dirs
       - fcitx-frontend-qt5
 
-  bitcoin-core:
+  aix-core:
     plugin: nil
     override-build: |
       env | grep "CRAFT\|SNAP" | sort
-      bitcoin_core_version=$(craftctl get version)
-      curl -LO https://bitcoincore.org/bin/bitcoin-core-${bitcoin_core_version}/SHA256SUMS
-      curl -LO https://bitcoincore.org/bin/bitcoin-core-${bitcoin_core_version}/bitcoin-${bitcoin_core_version}.tar.gz
-      curl -LO https://bitcoincore.org/bin/bitcoin-core-${bitcoin_core_version}/bitcoin-${bitcoin_core_version}-${CRAFT_ARCH_TRIPLET_BUILD_FOR}.tar.gz
+      aix_core_version=$(craftctl get version)
+      curl -LO https://aixcore.org/bin/aix-core-${aix_core_version}/SHA256SUMS
+      curl -LO https://aixcore.org/bin/aix-core-${aix_core_version}/aix-${aix_core_version}.tar.gz
+      curl -LO https://aixcore.org/bin/aix-core-${aix_core_version}/aix-${aix_core_version}-${CRAFT_ARCH_TRIPLET_BUILD_FOR}.tar.gz
       echo "bff6f5c133ab78a89fa56908ad4109b06692a3b2c5b38a67ed880137cf1d3bda  SHA256SUMS" | sha256sum --check
       sha256sum --ignore-missing --check SHA256SUMS
-      tar -xvf bitcoin-${bitcoin_core_version}-${CRAFT_ARCH_TRIPLET_BUILD_FOR}.tar.gz
-      tar -xvf bitcoin-${bitcoin_core_version}.tar.gz
+      tar -xvf aix-${aix_core_version}-${CRAFT_ARCH_TRIPLET_BUILD_FOR}.tar.gz
+      tar -xvf aix-${aix_core_version}.tar.gz
       echo "Running tests ..."
-      bitcoin-${bitcoin_core_version}/libexec/test_bitcoin
-      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin bitcoin-${bitcoin_core_version}/bin/bitcoind
-      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin bitcoin-${bitcoin_core_version}/bin/bitcoin-qt
-      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin bitcoin-${bitcoin_core_version}/bin/bitcoin-cli
-      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin bitcoin-${bitcoin_core_version}/bin/bitcoin-tx
-      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin bitcoin-${bitcoin_core_version}/bin/bitcoin-wallet
-      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin bitcoin-${bitcoin_core_version}/bin/bitcoin-util
-      curl -LO https://raw.githubusercontent.com/bitcoin/bitcoin/v${bitcoin_core_version}/share/pixmaps/bitcoin128.png
-      install -m 0644 -D -t $CRAFT_PART_INSTALL/share/pixmaps bitcoin128.png
+      aix-${aix_core_version}/libexec/test_aix
+      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin aix-${aix_core_version}/bin/aixd
+      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin aix-${aix_core_version}/bin/aix-qt
+      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin aix-${aix_core_version}/bin/aix-cli
+      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin aix-${aix_core_version}/bin/aix-tx
+      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin aix-${aix_core_version}/bin/aix-wallet
+      install -m 0755 -D -t $CRAFT_PART_INSTALL/bin aix-${aix_core_version}/bin/aix-util
+      curl -LO https://raw.githubusercontent.com/aix/aix/v${aix_core_version}/share/pixmaps/aix128.png
+      install -m 0644 -D -t $CRAFT_PART_INSTALL/share/pixmaps aix128.png
     build-packages:
       - curl
     after:
