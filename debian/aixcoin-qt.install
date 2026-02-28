@@ -1,0 +1,6 @@
+usr/local/bin/aixcoin-qt usr/bin
+share/pixmaps/aixcoin32.xpm usr/share/pixmaps
+share/pixmaps/aixcoin16.xpm usr/share/pixmaps
+share/pixmaps/aixcoin128.png usr/share/pixmaps
+debian/aixcoin-qt.desktop usr/share/applications
+debian/aixcoin-qt.protocol usr/share/kde4/services/

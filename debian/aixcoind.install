@@ -1,0 +1,3 @@
+usr/local/bin/aixcoind usr/bin
+usr/local/bin/aixcoin-cli usr/bin
+debian/examples/aixcoin.conf etc/aixcoin
