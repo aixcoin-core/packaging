@@ -4,7 +4,7 @@ Aixcoin Core packaging
 Aixcoin Core is packaged and distributed through different channels.
 
 Advanced users can compile Aixcoin Core from source. Static binaries for Linux, as well as installers for Windows and macOS are
-provided on the [website](https://aixcoincore.org/en/download/).
+provided on the [website](https://aixcoin-core.github.io/aixcoincore.org/en/download/).
 
 Aixcoin Core is also distributed on several Linux package managers:
 
