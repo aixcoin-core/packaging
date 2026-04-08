@@ -9,7 +9,7 @@ provided on the [website](https://aixcoin-core.github.io/en/download/).
 Aixcoin Core is also distributed on several Linux package managers:
 
 * The `aixcoin-core` snap package for https://snapcraft.io/aixcoin-core is maintained in [/snap](/snap)
-* The `org.aixcoincore.aixcoin-qt` flatpak package is maintained under their organization: https://github.com/flathub/org.aixcoincore.aixcoin-qt
+* The `io.aixcoin-core.github.aixcoin-qt` flatpak package is maintained under their organization: https://github.com/flathub/io.aixcoin-core.github.aixcoin-qt
 * The `aixcoin-core` guix package is maintained under https://codeberg.org/guix/guix/src/branch/master/gnu/packages/finance.scm
 * The `aixcoin` gentoo package is maintained under https://gitlab.com/aixcoin/gentoo
 * The [/debian](/debian) packaging is currently unmaintained, see https://github.com/aixcoin-core/packaging/issues/36
